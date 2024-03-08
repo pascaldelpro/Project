@@ -84,6 +84,39 @@ body{
     justify-content: right;
     align-items: center;
 }
+
+.top-main-div{
+    width: 100%;
+    height: auto;
+}
+
+.top-sub-div{
+    width: 27%;
+    margin-right: 3%;
+    margin-left: 3%;
+    margin-top: 3%;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid red;
+    float: left;
+    text-align: left;
+    padding-left: 10px;
+    font-family: 'Segoe UI';
+}
+
+.body-div{
+    width: 93%;
+    height: 460px;
+    background-color: orange;
+    float: left;
+    border-radius: 10px;
+    border: 2px solid red;
+    margin-left: 3%;
+    margin-top: 1%;
+}
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,6 +144,28 @@ body{
         </tr>
         <tr>
             <td>
+                <!-- mainDiv -->
+                <div class="top-main-div">
+
+                    <div class="top-sub-div">
+                        <h3>Balance</h3>
+                        <h4>3600$</h4>
+                    </div>
+
+                    <div class="top-sub-div">
+                    <h3>Last Transaction</h3>
+                        <h4>-100$</h4>
+                    </div>
+
+                    <div class="top-sub-div">
+                    <h3>Last Transaction</h3>
+                        <h4>-100$</h4>
+                    </div>
+                </div>
+                <div class="top-main-div">
+                    <div class="body-div">
+                    </div>
+                </div>
             </td>
         </tr>
     </table>
