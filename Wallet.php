@@ -91,10 +91,10 @@ body{
 }
 
 .top-sub-div{
-    width: 27%;
-    margin-right: 3%;
-    margin-left: 3%;
-    margin-top: 3%;
+    width: 20%;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 1%;
     height: auto;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -108,14 +108,23 @@ body{
 }
 
 .body-div{
-    width: 93%;
+    width: 64%;
     height: 460px;
     background-color: orange;
     float: left;
     border-radius: 10px;
     border: 2px solid red;
-    margin-left: 3%;
+    margin-left: 1%;
     margin-top: 1%;
+}
+
+input{
+    /* border-radius: 3px;
+    border: none; */
+    width: 300px;
+    height: 30px;
+    border-radius: 12px;
+    border: none;
 }
     </style>
     <meta charset="UTF-8">
@@ -144,27 +153,40 @@ body{
         </tr>
         <tr>
             <td>
+                <h5 style="font-family: 'Segoe UI'; margin-top: 2%; margin-left: 1%;">Wallet over view</h5>
                 <!-- mainDiv -->
                 <div class="top-main-div">
 
                     <div class="top-sub-div">
-                        <h3>Balance</h3>
-                        <h4>3600$</h4>
+                        <p style="font-size: 30px;">Balance</p>
+                        <p style="font-size: 30px;">3600$</p>
                     </div>
 
                     <div class="top-sub-div">
-                    <h3>Last Transaction</h3>
-                        <h4>-100$</h4>
+                        <p style="font-size: 30px;">Last Transaction</p>
+                        <p style="font-size: 30px;">-100$</p>
                     </div>
 
                     <div class="top-sub-div">
-                    <h3>Last Transaction</h3>
-                        <h4>-100$</h4>
+                        <p style="font-size: 30px;">Last Transaction</p>
+                        <p style="font-size: 30px;">-100$</p>
                     </div>
+
+                    
                 </div>
                 <div class="top-main-div">
                     <div class="body-div">
                     </div>
+                </div>
+                <div class="top-sub-div">
+                    <p style="font-size: 30px;">Gift</p>
+                    <form action="">
+                        <p style="font-size: 20px;">Receiver</p>
+                        <input type="text">
+                        <p style="font-size: 20px;">Amount</p>
+                        <input type="text">
+                        <input type="submit" value="Send">
+                    </form>
                 </div>
             </td>
         </tr>
