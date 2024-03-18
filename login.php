@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <td>
-            <form action="actionLogin.php" method="post" style="width: 49%;">
+            <form action="Actions\actionLogin.php" method="post" style="width: 49%;">
                 <h4 style="float: left;">username</h4><input type="text" name="username" class="InputText">
                 <br>
                 <h4 style="float: left;">password</h4><input type="password" name="password"  class="InputText">

@@ -38,20 +38,24 @@
             <td style="text-align: center; padding-top: 20px; font-family: 'Segoe UI'; font-size: 40px;">
                 <?php
                     session_start();
-                    if(isset($_SESSION['Name'])){
-                        echo("Welcome ". $_SESSION['Name']);
-                        ?>
-                            <tr>
-                                <td>
-                                    <div class="menu-div">
-                                        <button>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php
+                    if(isset($_SESSION['IsLogined'])){
+                        if($_SESSION['IsLogined'] === true){
+                            echo("Welcome ". $_SESSION['Name']);
+                ?>
+                    <tr>
+                        <td>
+                            <div class="menu-div" style="text-align: center;">
+                                <a href="Acount/reset-password.php" style="font-family: 'Segoe UI'; font-size: 25px; text-decoration: none; color: white;">Change password</a>
+                            </div>
+                            <!-- <div class="menu-div" style="text-align: center;">
+                                <a href="Acount/reset-password.php" style="font-family: 'Segoe UI'; font-size: 25px; text-decoration: none; color: white;">Change password</a>
+                            </div> -->
+                        </td>
+                    </tr>
+                <?php
+                        }
                     }
-                    else{
+                    if(!isset($_SESSION['IsLogined'])){
                         echo("Login first😊");
                     }
                 ?>

@@ -40,7 +40,7 @@
         <tr>
             <td>
                 <div class="fdiv">
-                    <form action="actionSignin.php" method="POST" name="form">
+                    <form action="Actions\actionSignin.php" method="POST" name="form">
                         <!-- <div class="title">Sign in</div> -->
                         <div>
                             <h4 style="float: left;">Name</h4>
@@ -54,6 +54,9 @@
                             <br>
                             <h4 style="float: left;">Email</h4>
                             <input type="Email" name="Email" class="InputText">
+                            <br>
+                            <h4 style="float: left;">Password</h4>
+                            <input type="text" name="GmailPassword" minlength="2" maxlength="20" required class="InputText">
                         </div>
                         <button type="submit" >Next Step</button>
                     </form>
