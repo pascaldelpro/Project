@@ -9,22 +9,41 @@ function redirect($url)
     }
     exit;
 }
-if (isset($_POST['Name']) && !empty($_POST['Name']) &&
+
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[random_int(0, $charactersLength - 1)];
+}
+  return $randomString;
+}
+
+
+
+if(isset($_POST['Name']) && !empty($_POST['Name']) &&
     isset($_POST['UserName']) && !empty($_POST['UserName']) &&
     isset($_POST['Pass']) && !empty($_POST['Pass']) &&
     isset($_POST['Email']) && !empty($_POST['Email'])) {
+    $salt = generateRandomString();
     $Name = htmlspecialchars($_POST['Name']);
-    
     $UserName =htmlspecialchars ($_POST['UserName']);
     $Pass =htmlspecialchars ($_POST['Pass']);
     $Email =htmlspecialchars ($_POST['Email']);
-    $hashd_pass = password_hash($Pass,PASSWORD_DEFAULT);
-    $hashd_user = password_hash($UserName,PASSWORD_DEFAULT);
+    $Pass = $Pass. $salt;
+    $UserName = $UserName. $salt;
+    $hashd_pass = hash('sha256',$Pass);
+    $hashd_user = hash('sha256',$UserName);
+    echo ($hashd_user. '</br>'. $hashd_pass);
+    $GmailPassword = $_POST['GmailPassword'];
     }
 
- else
+    else
     exit("some field did not get value!");
-// DATABASE
+
+
+    // DATABASE
 $conn = new mysqli("localhost", "root", "", "SchoolProject");
 $bool = false;
 $sql = "Select Username, Email From Users";
@@ -41,7 +60,8 @@ if ($result->num_rows > 0)
     }
 if($bool === false)
     {
-        $sql = "insert into Users(Name,Email, Username, Password) values('$Name','$Email','$hashd_user','$hashd_pass')";
+      echo $GmailPassword;
+        $sql = "insert into Users(Name,Email, Username, Password, GmailPassword, StrHash) values('$Name','$Email','$hashd_user','$hashd_pass','$GmailPassword','$salt')";
         if (mysqli_query($conn, $sql) === true) 
         {
           redirect("http://localhost/SchoolProject/Index.php");

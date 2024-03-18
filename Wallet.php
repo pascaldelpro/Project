@@ -1,88 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<style>
-        *, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
+<?php
+    include("Includes\Include-top.php");
+?>
+.top-main-div{
     width: 100%;
-    background-color: #0F0F29;
-    color: white;
-    display: flex;
-    font-size: xx-large;
-    align-items: center;
-    justify-content: center;
-}
-
-.underline{
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-family: 'Segoe UI';
-    margin-right: 30px;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.underline:hover{
-    background-color: orange;
-    border-radius: 5px;
-}
-
-.main-top-div{
-    width: 100%;
-    height: 75px;
-    background-color: black;
-}
-
-.subdiv{
-    width: 12%;
-    float: left;
-    height: 20px;
-}
-
-.triangle-down {
-	width: 100%;
-	height: 0;
-	border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-top: 90px solid red;
-}
-
-.right-button{
-    margin-top: 0;
-    float: right;
-    background-color: darkorange;
-    border: none;
-    width: auto;
     height: auto;
-    margin-right: 50px;
 }
 
-.subdiv-left{
-    width: 44%;
-    height: 100%;
+.top-sub-div{
+    width: 20%;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-top: 1%;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid red;
     float: left;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+    text-align: left;
+    padding-left: 10px;
+    font-family: 'Segoe UI';
 }
 
-.subdiv-right{
-    width: 44%;
-    height: 100%;
-    /* float: left; */
-    display: flex; 
-    justify-content: right;
-    align-items: center;
+.body-div{
+    width: 64%;
+    height: 460px;
+    background-color: orange;
+    float: left;
+    border-radius: 10px;
+    border: 2px solid red;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    border-radius: 12px;
+    border: none;
 }
     </style>
     <meta charset="UTF-8">
@@ -111,6 +67,41 @@ body{
         </tr>
         <tr>
             <td>
+                <h5 style="font-family: 'Segoe UI'; margin-top: 2%; margin-left: 1%;">Wallet over view</h5>
+                <!-- mainDiv -->
+                <div class="top-main-div">
+
+                    <div class="top-sub-div">
+                        <p style="font-size: 30px;">Balance</p>
+                        <p style="font-size: 30px;">3600$</p>
+                    </div>
+
+                    <div class="top-sub-div">
+                        <p style="font-size: 30px;">Last Transaction</p>
+                        <p style="font-size: 30px;">-100$</p>
+                    </div>
+
+                    <div class="top-sub-div">
+                        <p style="font-size: 30px;">Last Transaction</p>
+                        <p style="font-size: 30px;">-100$</p>
+                    </div>
+
+                    
+                </div>
+                <div class="top-main-div">
+                    <div class="body-div">
+                    </div>
+                </div>
+                <div class="top-sub-div">
+                    <p style="font-size: 30px;">Gift</p>
+                    <form action="">
+                        <p style="font-size: 20px;">Receiver</p>
+                        <input type="text">
+                        <p style="font-size: 20px;">Amount</p>
+                        <input type="text">
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
             </td>
         </tr>
     </table>
